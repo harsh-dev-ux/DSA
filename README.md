@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated Header -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&pause=1000&color=00D9FF&center=true&vCenter=true&random=false&width=600&height=100&lines=%F0%9F%93%9A+Made+for+Revision;Striver+DSA+Course;Let's+Master+DSA!" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&pause=1000&color=00D9FF&center=true&vCenter=true&random=false&width=600&height=100&lines=%F0%9F%93%9A+Made+for+Revision" alt="Typing SVG" />
 
 <!-- Badges -->
 <p>
@@ -119,8 +119,6 @@ Each solution follows this format:
 <div align="center">
 
 ### 🌟 Star this repo if you find it helpful!
-
-<img src="https://img.shields.io/github/stars/harsh-dev-ux/DSA?style=social" />
 
 ---
 
