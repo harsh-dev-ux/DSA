@@ -25,9 +25,9 @@ Every problem is solved with detailed explanations, time & space complexity anal
 
 | Section | Topics | Progress |
 |:-------:|:------:|:--------:|
-| 🟢 **Basic** | 12 | ![](https://geps.dev/progress/0) |
+| 🟢 **Basic** | 12 | ![](https://geps.dev/progress/17) |
 | 🔴 **Advanced** | 18 | ![](https://geps.dev/progress/0) |
-| **Total** | **30** | ![](https://geps.dev/progress/0) |
+| **Total** | **30** | ![](https://geps.dev/progress/7) |
 
 ---
 
@@ -37,9 +37,9 @@ Every problem is solved with detailed explanations, time & space complexity anal
 
 | # | Topic | Problems | Status |
 |:-:|:------|:--------:|:------:|
-| 01 | [Fundamentals of Programming](./00-Basic/01-Fundamentals-of-Programming/) | 0 | ⏳ |
-| 02 | [Language Basics](./00-Basic/02-Language-Basics/) | 0 | ⏳ |
-| 03 | [Logic Building (Patterns)](./00-Basic/03-Logic-Building-Patterns/) | 0 | ⏳ |
+| 01 | [Fundamentals of Programming](./00-Basic/01-Fundamentals-of-Programming/) | 2 | ✅ |
+| 02 | [Language Basics](./00-Basic/02-Language-Basics/) | 2 | ✅ |
+| 03 | [Logic Building (Patterns)](./00-Basic/03-Logic-Building-Patterns/) | 0 | 🔄 |
 | 04 | [Patterns](./00-Basic/04-Patterns/) | 0 | ⏳ |
 | 05 | [Time Complexity](./00-Basic/05-Time-Complexity/) | 0 | ⏳ |
 | 06 | [STL and Collections](./00-Basic/06-STL-and-Collections/) | 0 | ⏳ |
