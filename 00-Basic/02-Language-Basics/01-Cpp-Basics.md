@@ -1,477 +1,244 @@
 # C++ Basics
-> The Language of Speed
+
+Why C++? Because it's fast. Like really fast. In competitive programming and system-level stuff, C++ is the go-to because it compiles to machine code directly — no interpreter overhead like Python. You get manual memory control, and the STL (Standard Template Library) gives you optimized data structures out of the box.
 
 ---
 
-## 📌 Welcome to the Coding World!
-
-C++ is a powerful, general-purpose programming language widely used for:
-- System development
-- Software engineering
-- Competitive programming
-
----
-
-## 1️⃣ Basic Skeleton
-
-Every human has a skeleton (bones) that gives them structure. Similarly, every C++ program has a standard skeleton.
-
-### Minimum Code Required:
+## Basic Skeleton
 
 ```cpp
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    // Write your code here
+    // code here
     return 0;
 }
 ```
 
-### Understanding the Parts:
+Most CP people use `#include <bits/stdc++.h>` instead of individual headers like `<iostream>`, `<vector>`, `<algorithm>` etc. It includes everything in one line. Yes it increases compile time slightly, but in contests you don't care — you care about writing speed. In production code or interviews you'd use specific headers though.
 
-| Part | Meaning |
-|------|---------|
-| `#include <iostream>` | Include tools for Input/Output. Without this, we cannot take input or print anything. |
-| `using namespace std;` | Shortcut to use standard tools (like `cout`) directly without `std::` prefix. |
-| `int main()` | Starting point. Computer looks for `main()` and starts executing from there. |
-| `{ ... }` | Curly braces mark beginning and end of main function. Everything inside executes sequentially. |
-| `return 0;` | Tells computer: "Program finished successfully." |
+`using namespace std;` — saves you from writing `std::cout`, `std::cin` everywhere. Again, not great practice in big projects (namespace pollution), but in CP nobody cares. Speed of writing > code purity.
 
-> 💡 **Note:** If you need other tools (like maths), include: `#include <cmath>`
+`return 0;` tells the OS the program exited fine. Technically optional in modern C++ but just keep it.
 
 ---
 
-## 2️⃣ Data Types
+## Data Types — Pick the Right One
 
-In real life, we have different containers for different things:
-- 🍶 Bottle for water (Liquid)
-- 📦 Box for shoes (Solid)
-- 👛 Wallet for money (Cash)
+This matters more than people think. Wrong data type = wrong answer or TLE.
 
-In C++, **Data Types** are containers (variables) for different kinds of data.
+| Type | Size | Range | When to use |
+|------|------|-------|-------------|
+| `int` | 4 bytes | ~-2×10⁹ to 2×10⁹ | Default choice. Most problems fit in this |
+| `long long` | 8 bytes | ~-9×10¹⁸ to 9×10¹⁸ | When numbers can go above 10⁹ (like n×n where n=10⁵) |
+| `double` | 8 bytes | ~15 decimal digits | Decimal math. Avoid `float` — only 6-7 digits precision, will give wrong answers |
+| `char` | 1 byte | single character | When dealing with characters. Uses way less memory than string for single chars |
+| `bool` | 1 byte | true/false | Flags. Technically 1 bit of info but stored as 1 byte |
+| `string` | varies | text | When you need text. Heavier than char arrays but easier to work with |
 
-### Common Data Types:
+**Why not always use `long long`?** It takes 2x the memory of `int` and is slightly slower on some operations. If the problem says n ≤ 10⁵ and values ≤ 10⁶, `int` is fine. But if you're multiplying two ints that can be 10⁹, the result overflows `int` — use `long long`.
 
-| Type | Name | Stores | Examples |
-|------|------|--------|----------|
-| `int` | Integer | Whole numbers | `5`, `-10`, `100` |
-| `float` | Floating Point | Decimal numbers | `3.14`, `2.5`, `-0.1` |
-| `char` | Character | Single letter/symbol | `'a'`, `'Z'`, `'$'` |
-| `bool` | Boolean | True or False | `true`, `false` |
-| `string` | String | Text (collection of chars) | `"Hello"`, `"C++"` |
-
-### Code Example:
+Quick trick in CP: `#define ll long long` so you type less.
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int age = 25;
-    float height = 5.9;
-    char grade = 'A';
-    bool isStudent = true;
-    string name = "Rahul";
-    return 0;
-}
+#define ll long long
+ll bigNumber = 1e18; // instead of long long bigNumber
 ```
+
+**`float` vs `double`**: Almost never use `float`. It has garbage precision (~7 digits). `double` gives ~15 digits. If a problem involves decimals, always `double`. Some problems even need `long double` for extra precision.
 
 ---
 
-## 3️⃣ Input / Output (I/O)
-
-How do we talk to the computer?
-
-| Action | Keyword | Description |
-|--------|---------|-------------|
-| **Output** | `cout` | Show something on screen (See-Out) |
-| **Input** | `cin` | Read what user types (See-In) |
-
-### Arrow Direction Trick:
-
-```
-cout << data   // Arrows go OUT towards the screen →
-cin >> variable // Arrows go IN towards the variable ←
-```
-
-### Code Example:
+## Input / Output
 
 ```cpp
-#include <iostream>
-using namespace std;
+cin >> x;       // read input
+cout << x;      // print output
+```
 
-int main() {
-    int age;
+Arrows point the direction of data flow. `>>` into variable, `<<` out to screen.
 
-    // Output: Ask user a question
-    cout << "Enter your age: ";
-    
-    // Input: Read what user types and store in 'age'
-    cin >> age;
-    
-    // Output: Show the result
-    cout << "Your age is: " << age;
-    
-    return 0;
-}
+### Speed trick — THIS IS IMPORTANT for CP:
+
+```cpp
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+```
+
+Put this at the top of `main()`. By default `cin/cout` sync with C's `scanf/printf` which makes them slow. These two lines disable that sync and untie cin from cout. Can be the difference between AC and TLE on problems with heavy I/O (like 10⁵+ lines of input).
+
+Some people still use `scanf/printf` from C — they're faster by default and you don't need the sync trick. But with the trick above, `cin/cout` are basically the same speed.
+
+**Don't use `endl`** in loops — it flushes the buffer every time which is slow. Use `"\n"` instead.
+
+```cpp
+// slow in loops
+cout << x << endl;
+
+// fast
+cout << x << "\n";
 ```
 
 ---
 
-## 4️⃣ If-Else (Decision Making)
-
-Life is full of decisions: *"If it rains, I will take an umbrella. Else, I will not."*
-
-### Syntax:
+## If-Else
 
 ```cpp
 if (condition) {
-    // Do this if condition is TRUE
+    // true
 } else {
-    // Do this if condition is FALSE
+    // false
 }
 ```
 
-### Code Example:
+Nothing fancy here. But know the **ternary operator** — shorter to write:
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int money = 500;
-
-    if (money >= 1000) {
-        cout << "I will buy a pizza";
-    } else {
-        cout << "I will buy a burger";
-    }
-    
-    return 0;
-}
+// instead of if-else for simple assignments:
+int result = (a > b) ? a : b;  // gives max of a and b
 ```
 
-> **Output:** "I will buy a burger" (since 500 < 1000)
+Saves lines. Used a lot in CP for quick conditional assignments.
 
 ---
 
-## 5️⃣ For Loop (Repetition)
+## Loops
 
-Imagine teacher says: *"Write 'I am sorry' 100 times."*
-
-You wouldn't write the same line 100 times. Use a **Loop**!
-
-### Syntax:
-
+### For loop
 ```cpp
-for (initialization; condition; updation) {
-    // Code to repeat
+for (int i = 0; i < n; i++) {
+    // runs n times
 }
 ```
 
-### Breakdown:
+Start from 0, not 1 — arrays are 0-indexed so it's cleaner. Most CP people do 0-indexed.
 
-| Part | Purpose | Runs When |
-|------|---------|-----------|
-| `initialization` | Where we start (e.g., `int i = 1`) | Only once at beginning |
-| `condition` | Check before every round (e.g., `i <= 5`) | Before each iteration |
-| `updation` | Update counter (e.g., `i++`) | End of every round |
-
-### Code Example:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Print "Hello" 5 times
-    for (int i = 1; i <= 5; i++) {
-        cout << "Hello" << endl;
-    }
-    
-    return 0;
-}
-```
-
----
-
-## 6️⃣ While Loop
-
-A simpler loop. It only cares about the condition.
-
-*"While you are hungry, eat."*
-
-### Syntax:
-
+### While loop
 ```cpp
 while (condition) {
-    // Code to repeat
-    // Don't forget to update! Otherwise infinite loop
+    // keep going until condition is false
 }
 ```
 
-### Code Example:
-
+Use when you don't know how many iterations. Like reading input until EOF:
 ```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int count = 1;
-
-    while (count <= 5) {
-        cout << count << " ";
-        count++; // Important! Increase count
-    }
-    
-    return 0;
+int x;
+while (cin >> x) {
+    // processes each input
 }
 ```
 
-> **Output:** `1 2 3 4 5`
-
----
-
-## 7️⃣ Switch Case
-
-When you have many options (like a menu), many if-else gets messy. Use **switch**!
-
-### Syntax:
-
+### do-while
+Rarely used but runs at least once before checking condition:
 ```cpp
-switch (variable) {
-    case value1:
-        // code
-        break;
-    case value2:
-        // code
-        break;
-    default:
-        // code if no match
-}
-```
-
-### Important Keywords:
-
-| Keyword | Purpose |
-|---------|---------|
-| `break` | Exit the switch block. Without it, code "falls through" to next cases. |
-| `default` | Runs if no case matches. Like final `else`. |
-
-### Code Example:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int day = 3;
-
-    switch (day) {
-        case 1:
-            cout << "Monday";
-            break;
-        case 2:
-            cout << "Tuesday";
-            break;
-        case 3:
-            cout << "Wednesday";
-            break;
-        default:
-            cout << "Invalid day";
-    }
-    
-    return 0;
-}
-```
-
-> **Output:** `Wednesday`
-
----
-
-## 8️⃣ Arrays
-
-What if we need to store marks of 50 students? Creating 50 variables (`m1, m2, m3...`) is bad!
-
-> **Array** = Single variable holding multiple values of same type. Think of it as an **egg tray** 🥚
-
-### Syntax:
-
-```cpp
-datatype arrayName[size] = {values};
-```
-
-### Code Example:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Create an array of 5 integers
-    int marks[5] = {90, 85, 92, 78, 88};
-    
-    // Accessing elements
-    cout << marks[0] << endl; // Output: 90 (first)
-    cout << marks[2] << endl; // Output: 92 (third)
-    
-    return 0;
-}
-```
-
-> ⚠️ **Important:** Indexing starts from **0**. First element = index 0.
-
-| Index | 0 | 1 | 2 | 3 | 4 |
-|-------|---|---|---|---|---|
-| Value | 90 | 85 | 92 | 78 | 88 |
-
----
-
-## 9️⃣ Strings
-
-A **string** stores text. It's actually a chain of characters.
-
-### Code Example:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    string firstName = "John";
-    string lastName = "Doe";
-    
-    // Concatenation (Joining strings)
-    string fullName = firstName + " " + lastName;
-    
-    cout << fullName << endl;      // Output: John Doe
-    cout << fullName.length();     // Output: 8 (characters)
-    
-    return 0;
-}
-```
-
-### Common String Operations:
-
-| Operation | Syntax | Example |
-|-----------|--------|---------|
-| Concatenate | `str1 + str2` | `"Hello" + "World"` |
-| Length | `str.length()` | `name.length()` |
-| Access char | `str[index]` | `name[0]` → first char |
-
----
-
-## 🔟 Functions
-
-A **function** is a block of code that does a specific task. Write once, call whenever needed.
-
-> It's like a **servant**. Teach them how to make tea once, then just order "Make Tea" anytime! ☕
-
-### Syntax:
-
-```cpp
-returnType functionName(parameters) {
+do {
     // code
-    return value; // if returnType is not void
-}
+} while (condition);
 ```
 
-### Code Example:
+---
+
+## Switch
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-// Function Definition
-void sayHello() {
-    cout << "Hello user!" << endl;
-}
-
-int main() {
-    sayHello(); // Calling the function
-    sayHello(); // Calling it again
-    return 0;
+switch (x) {
+    case 1: /* code */ break;
+    case 2: /* code */ break;
+    default: /* fallback */
 }
 ```
 
-> **Functions keep our code clean and reusable!**
+Cleaner than chained if-else when you have multiple exact-value checks. Compiler can optimize switch into a jump table which is O(1) lookup — chained if-else is O(n) comparisons. But honestly in CP the difference is negligible, it's more about readability.
+
+**Don't forget `break`** — without it, execution "falls through" to the next case.
 
 ---
 
-## 1️⃣1️⃣ Pass by Value vs Pass by Reference
-
-When we pass variables to functions, how are they sent?
-
-### Pass by Value (The Photocopy) 📄
-
-Function gets a **copy**. Changing copy does NOT change original.
+## Arrays
 
 ```cpp
-#include <iostream>
-using namespace std;
-
-void changeValue(int x) {
-    x = 100; // Changes only the copy
-}
-
-int main() {
-    int num = 10;
-    changeValue(num);
-    cout << num; // Output: 10 (Original didn't change!)
-}
+int arr[100005]; // global — initialized to 0 automatically
+int arr2[5] = {1, 2, 3, 4, 5}; // local with values
 ```
 
-### Pass by Reference (The Original) 📓
+**Why declare globally in CP?** Global arrays are initialized to 0 and have larger stack size limits. Local arrays sit on the stack which is limited (~1-8 MB). If you need an array of size 10⁶, declare it globally or you'll get a stack overflow / segfault.
 
-We send the **address** using `&`. Function works on the original.
+**Indexing starts at 0.** `arr[0]` is the first element.
+
+Size matters — an `int` array of size 10⁶ takes ~4 MB. `long long` array of same size takes ~8 MB. Most problems have 256 MB memory limit so you can usually fit ~6×10⁷ ints. Keep this in mind.
+
+For dynamic sizes, use `vector` from STL (covered later) — it's basically a resizable array, slightly slower due to overhead but way more flexible.
+
+---
+
+## Strings
 
 ```cpp
-#include <iostream>
-using namespace std;
+string s = "hello";
+cout << s.length();   // 5
+cout << s[0];          // 'h'
+s += " world";        // concatenation
+```
 
-void changeRealValue(int &x) { // Note the '&'
-    x = 100; // Changes the actual variable
-}
+Strings in C++ are mutable (unlike Java/Python). You can change individual characters: `s[0] = 'H';`
 
-int main() {
-    int num = 10;
-    changeRealValue(num);
-    cout << num; // Output: 100 (It changed!)
+**For reading strings with spaces**, `cin >> s` stops at whitespace. Use `getline(cin, s)` instead. But watch out — if you mix `cin >>` and `getline`, there's a leftover newline issue. Fix it with `cin.ignore()` before `getline`.
+
+```cpp
+int n;
+cin >> n;
+cin.ignore();         // eat the leftover newline
+string s;
+getline(cin, s);      // now this works properly
+```
+
+---
+
+## Functions
+
+```cpp
+int add(int a, int b) {
+    return a + b;
 }
 ```
 
-### Analogy:
+Write once, call many times. Keeps code clean and avoids repetition.
 
-| Type | Analogy |
-|------|---------|
-| Pass by Value | Sharing a **photo** of your homework. Friend writes on photo, your notebook stays clean. |
-| Pass by Reference | Giving your **actual notebook**. Friend writes in it, your notebook changes. |
+`void` = function returns nothing. Otherwise specify the return type.
 
----
+### Pass by Value vs Pass by Reference
 
-## 📋 Summary
+```cpp
+void byValue(int x) { x = 100; }     // changes copy, original stays same
+void byRef(int &x) { x = 100; }      // changes the actual variable
+```
 
-| Topic | Key Point |
-|-------|-----------|
-| Skeleton | `#include <iostream>`, `int main()` |
-| Data Types | `int`, `float`, `char`, `bool`, `string` |
-| I/O | `cin >>` (input), `cout <<` (output) |
-| Decisions | `if-else`, `switch` |
-| Loops | `for`, `while` (to repeat) |
-| Arrays | Store multiple values of same type |
-| Strings | Store text, use `.length()` |
-| Functions | Reusable code blocks |
-| Pass by Reference | Use `&` to modify originals |
+**Why this matters**: When you pass a `vector` or `string` to a function by value, it copies the ENTIRE thing. That's O(n) time and memory. Pass by reference with `&` to avoid the copy.
 
----
+```cpp
+// BAD — copies entire vector every call, O(n) overhead
+void process(vector<int> v) { ... }
 
-## 🚀 Next Steps
+// GOOD — no copy, works on original, O(1) to pass
+void process(vector<int> &v) { ... }
 
-> **Don't just read. Type these examples. See them run. Break them. Fix them.**
-> 
-> That is the only way to learn C++.
+// GOOD — no copy, and can't accidentally modify it
+void process(const vector<int> &v) { ... }
+```
+
+This is a common source of TLE in CP. Always pass large data structures by reference.
 
 ---
 
-*Next: Practice Problems*
+## Summary
+
+| Topic | What to remember |
+|-------|-----------------|
+| Headers | `bits/stdc++.h` for CP, specific headers for production |
+| Data types | `int` default, `long long` when overflow possible, never `float` |
+| Fast I/O | `ios_base::sync_with_stdio(false); cin.tie(NULL);` and `"\n"` over `endl` |
+| Arrays | Declare large arrays globally, know memory limits |
+| Strings | `getline` for spaces, `cin.ignore()` after `cin >>` |
+| Functions | Always pass vectors/strings by reference (`&`) to avoid TLE |
+| General | C++ is fast but you can still get TLE with bad practices |
