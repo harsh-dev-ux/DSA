@@ -39,41 +39,41 @@ Not a textbook. Just my notes as I go through **Striver's A2Z DSA course**.
 
 | # | Topic | Status |
 |:-:|:------|:------:|
-| 01 | [Fundamentals of Programming](./00-Basic/01-Fundamentals-of-Programming/) | ✅ |
-| 02 | [Language Basics (C++)](./00-Basic/02-Language-Basics/) | ✅ |
-| 03 | [Logic Building (Patterns)](./00-Basic/03-Logic-Building-Patterns/) | 🔄 |
-| 04 | [Patterns](./00-Basic/04-Patterns/) | ⏳ |
-| 05 | [Time Complexity](./00-Basic/05-Time-Complexity/) | ⏳ |
-| 06 | [STL and Collections](./00-Basic/06-STL-and-Collections/) | ⏳ |
-| 07 | [Concept Basics](./00-Basic/07-Concept-Basics/) | ⏳ |
-| 08 | [Basic Maths](./00-Basic/08-Basic-Maths/) | ⏳ |
-| 09 | [Basic Arrays](./00-Basic/09-Basic-Arrays/) | ⏳ |
-| 10 | [Basic Hashing](./00-Basic/10-Basic-Hashing/) | ⏳ |
-| 11 | [Basic Strings](./00-Basic/11-Basic-Strings/) | ⏳ |
-| 12 | [Basic Recursion](./00-Basic/12-Basic-Recursion/) | ⏳ |
+| 01 | [Fundamentals of Programming](./files/00-Basic/01-Fundamentals-of-Programming/) | ✅ |
+| 02 | [Language Basics (C++)](./files/00-Basic/02-Language-Basics/) | ✅ |
+| 03 | [Logic Building (Patterns)](./files/00-Basic/03-Logic-Building-Patterns/) | 🔄 |
+| 04 | [Patterns](./files/00-Basic/04-Patterns/) | ⏳ |
+| 05 | [Time Complexity](./files/00-Basic/05-Time-Complexity/) | ⏳ |
+| 06 | [STL and Collections](./files/00-Basic/06-STL-and-Collections/) | ⏳ |
+| 07 | [Concept Basics](./files/00-Basic/07-Concept-Basics/) | ⏳ |
+| 08 | [Basic Maths](./files/00-Basic/08-Basic-Maths/) | ⏳ |
+| 09 | [Basic Arrays](./files/00-Basic/09-Basic-Arrays/) | ⏳ |
+| 10 | [Basic Hashing](./files/00-Basic/10-Basic-Hashing/) | ⏳ |
+| 11 | [Basic Strings](./files/00-Basic/11-Basic-Strings/) | ⏳ |
+| 12 | [Basic Recursion](./files/00-Basic/12-Basic-Recursion/) | ⏳ |
 
 ### Advanced
 
 | # | Topic | Status |
 |:-:|:------|:------:|
-| 01 | [Sorting](./01-Advanced/01-Sorting/) | ⏳ |
-| 02 | [Arrays](./01-Advanced/02-Arrays/) | ⏳ |
-| 03 | [Hashing](./01-Advanced/03-Hashing/) | ⏳ |
-| 04 | [Binary Search](./01-Advanced/04-Binary-Search/) | ⏳ |
-| 05 | [Recursion](./01-Advanced/05-Recursion/) | ⏳ |
-| 06 | [Linked List](./01-Advanced/06-Linked-List/) | ⏳ |
-| 07 | [Bit Manipulation](./01-Advanced/07-Bit-Manipulation/) | ⏳ |
-| 08 | [Greedy Algorithms](./01-Advanced/08-Greedy-Algorithms/) | ⏳ |
-| 09 | [Sliding Window / Two Pointer](./01-Advanced/09-Sliding-Window-2-Pointer/) | ⏳ |
-| 10 | [Stack / Queues](./01-Advanced/10-Stack-Queues/) | ⏳ |
-| 11 | [Binary Trees](./01-Advanced/11-Binary-Trees/) | ⏳ |
-| 12 | [BST](./01-Advanced/12-Binary-Search-Trees/) | ⏳ |
-| 13 | [Heaps](./01-Advanced/13-Heaps/) | ⏳ |
-| 14 | [Graphs](./01-Advanced/14-Graphs/) | ⏳ |
-| 15 | [Dynamic Programming](./01-Advanced/15-Dynamic-Programming/) | ⏳ |
-| 16 | [Tries](./01-Advanced/16-Tries/) | ⏳ |
-| 17 | [Strings (Advanced)](./01-Advanced/17-Strings-Advanced-Algo/) | ⏳ |
-| 18 | [Maths](./01-Advanced/18-Maths/) | ⏳ |
+| 01 | [Sorting](./files/01-Advanced/01-Sorting/) | ⏳ |
+| 02 | [Arrays](./files/01-Advanced/02-Arrays/) | ⏳ |
+| 03 | [Hashing](./files/01-Advanced/03-Hashing/) | ⏳ |
+| 04 | [Binary Search](./files/01-Advanced/04-Binary-Search/) | ⏳ |
+| 05 | [Recursion](./files/01-Advanced/05-Recursion/) | ⏳ |
+| 06 | [Linked List](./files/01-Advanced/06-Linked-List/) | ⏳ |
+| 07 | [Bit Manipulation](./files/01-Advanced/07-Bit-Manipulation/) | ⏳ |
+| 08 | [Greedy Algorithms](./files/01-Advanced/08-Greedy-Algorithms/) | ⏳ |
+| 09 | [Sliding Window / Two Pointer](./files/01-Advanced/09-Sliding-Window-2-Pointer/) | ⏳ |
+| 10 | [Stack / Queues](./files/01-Advanced/10-Stack-Queues/) | ⏳ |
+| 11 | [Binary Trees](./files/01-Advanced/11-Binary-Trees/) | ⏳ |
+| 12 | [BST](./files/01-Advanced/12-Binary-Search-Trees/) | ⏳ |
+| 13 | [Heaps](./files/01-Advanced/13-Heaps/) | ⏳ |
+| 14 | [Graphs](./files/01-Advanced/14-Graphs/) | ⏳ |
+| 15 | [Dynamic Programming](./files/01-Advanced/15-Dynamic-Programming/) | ⏳ |
+| 16 | [Tries](./files/01-Advanced/16-Tries/) | ⏳ |
+| 17 | [Strings (Advanced)](./files/01-Advanced/17-Strings-Advanced-Algo/) | ⏳ |
+| 18 | [Maths](./files/01-Advanced/18-Maths/) | ⏳ |
 
 ---
 
