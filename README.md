@@ -1,6 +1,6 @@
 # Data Structures & Algorithms
 
-Personal DSA notes and solutions — things I find important while learning.
+Personal DSA notes and solutions — learning from [takeUforward](https://takeuforward.org/).
 
 ---
 
