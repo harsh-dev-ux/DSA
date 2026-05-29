@@ -27,9 +27,9 @@ Not a textbook. Just my notes as I go through **Striver's A2Z DSA course**.
 
 | Section | Topics | Progress |
 |:-------:|:------:|:--------:|
-| 🟢 **Basic** | 12 | ![](https://geps.dev/progress/17) |
+| 🟢 **Basic** | 11 | ![](https://geps.dev/progress/18) |
 | 🔴 **Advanced** | 18 | ![](https://geps.dev/progress/0) |
-| **Total** | **30** | ![](https://geps.dev/progress/7) |
+| **Total** | **29** | ![](https://geps.dev/progress/7) |
 
 ---
 
@@ -41,16 +41,15 @@ Not a textbook. Just my notes as I go through **Striver's A2Z DSA course**.
 |:-:|:------|:------:|
 | 01 | [Fundamentals of Programming](./files/00-Basic/01-Fundamentals-of-Programming/) | ✅ |
 | 02 | [Language Basics (C++)](./files/00-Basic/02-Language-Basics/) | ✅ |
-| 03 | [Logic Building (Patterns)](./files/00-Basic/03-Logic-Building-Patterns/) | 🔄 |
-| 04 | [Patterns](./files/00-Basic/04-Patterns/) | ⏳ |
-| 05 | [Time Complexity](./files/00-Basic/05-Time-Complexity/) | ⏳ |
-| 06 | [STL and Collections](./files/00-Basic/06-STL-and-Collections/) | ⏳ |
-| 07 | [Concept Basics](./files/00-Basic/07-Concept-Basics/) | ⏳ |
-| 08 | [Basic Maths](./files/00-Basic/08-Basic-Maths/) | ⏳ |
-| 09 | [Basic Arrays](./files/00-Basic/09-Basic-Arrays/) | ⏳ |
-| 10 | [Basic Hashing](./files/00-Basic/10-Basic-Hashing/) | ⏳ |
-| 11 | [Basic Strings](./files/00-Basic/11-Basic-Strings/) | ⏳ |
-| 12 | [Basic Recursion](./files/00-Basic/12-Basic-Recursion/) | ⏳ |
+| 03 | [Patterns](./files/00-Basic/03-Patterns/) | ⏳ |
+| 04 | [Time Complexity](./files/00-Basic/04-Time-Complexity/) | ⏳ |
+| 05 | [STL and Collections](./files/00-Basic/05-STL-and-Collections/) | ⏳ |
+| 06 | [Concept Basics](./files/00-Basic/06-Concept-Basics/) | ⏳ |
+| 07 | [Basic Maths](./files/00-Basic/07-Basic-Maths/) | ⏳ |
+| 08 | [Basic Arrays](./files/00-Basic/08-Basic-Arrays/) | ⏳ |
+| 09 | [Basic Hashing](./files/00-Basic/09-Basic-Hashing/) | ⏳ |
+| 10 | [Basic Strings](./files/00-Basic/10-Basic-Strings/) | ⏳ |
+| 11 | [Basic Recursion](./files/00-Basic/11-Basic-Recursion/) | ⏳ |
 
 ### Advanced
 
